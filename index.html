@@ -6,10 +6,14 @@
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const car = document.querySelector('#truck');
+  const truck = document.querySelector('#truck');
 
-  car.addEventListener('animationcomplete__first', () => {
-    car.emit('moveDone');
+  truck.addEventListener('animationcomplete__first', () => {
+    truck.emit('moveDone');
+  });
+
+  truck.addEventListener('animationcomplete__turn', () => {
+    truck.emit('moveNext');
   });
 });
 </script>
@@ -70,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
     to: 13.781 1.384 -9.974 ;
     dur: 20000;
     easing: linear;
-    startEvents: loaded
+    startEvents: moveNext
   "
 
 ></a-entity>
