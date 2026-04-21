@@ -76,6 +76,19 @@ window.addEventListener('DOMContentLoaded', () => {
   redCar.addEventListener('animationcomplete__3', () => {
     redCar.emit('moveturn3');
   });
+
+    redCar.addEventListener('animationcomplete__turn3', () => {
+    redCar.emit('moveforward2');
+  });
+
+    redCar.addEventListener('animationcomplete__4', () => {
+    redCar.emit('moveturn4');
+  });
+
+    redCar.addEventListener('animationcomplete__turn4', () => {
+    redCar.emit('moveforward3');
+  });
+
 });
 </script>
 
@@ -294,12 +307,26 @@ window.addEventListener('DOMContentLoaded', () => {
     easing: linear;
     startEvents: moveturn3"
 
-    animation__3="
+    animation__4="
     property: position;
-    to: 0.730 1.353 -22.317;
+    to: 0.730 1.353 -11.082;
     dur: 3000;
     easing: linear;
     startEvents: moveforward2"
+
+    animation__turn4="
+    property: rotation;
+    to: -90 0 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveturn4"
+
+    animation__5="
+    property: position;
+    to:-0.647 1.353 -11.034 
+    easing: linear;
+    startEvents: moveforward3"
+    
 
 ></a-entity>
 
