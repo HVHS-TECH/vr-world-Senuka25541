@@ -49,8 +49,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   truck.emit('resetStart');
 });
-</script>
 
+
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const smoke = document.querySelector('[ply-model*="smoke 5"]');
+
+  setTimeout(() => {
+    smoke.emit('startSmoke');
+  }, 2000); // 2 second delay
+});
+</script>
 
   </head>
     <body>
@@ -157,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
 <a-entity
   ply-model="src:smoke 5.ply"
   position="-4.40 7.2 -20.530"
-  scale="0.1 0.3 0.3"
+  scale="0.1 0.1 0.1"
   rotation="-90 0 0"
 
   animation__pulse="
@@ -166,9 +176,6 @@ window.addEventListener('DOMContentLoaded', () => {
     dir: alternate;
     dur: 6000;
     easing: easeInOutSine;
+    startEvents: startSmoke;
   "
-></a-entity>
-                 
-    </a-scene>
-  </body>
-</html>
+></a-entity>  
