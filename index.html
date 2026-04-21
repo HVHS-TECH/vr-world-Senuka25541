@@ -211,7 +211,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scale="0.27 0.27 0.27"
 ></a-entity>
 
-<a-entity 
+<a-entity id="redCar"
       ply-model="src:City cars-4.ply"
       position="5.025 1.398 -15.969"
       rotation="-90 360 90"
@@ -220,9 +220,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <a-entity 
       ply-model="src:redCar.ply"
-      position="5.025 1.398 -15.969"
+      position="-9.126 1.428 -9.958"
       rotation="-90 360 90"
       scale="0.27 0.27 0.27"
+
+        animation__first="
+    property: position;
+    to: 3.295 1.384 -9.974;
+    dur: 3000;
+    easing: linear;
+    startEvents: resetStart
+  "
 ></a-entity>
 
 
