@@ -40,6 +40,29 @@
       position="3.768 1.384 -1.236"
       rotation="-90 270 90"
       scale="0.27 0.27 0.27"
+
+       animation__move1="
+    property: position;
+    to: ;
+    dur: 2000;
+    easing: linear;
+    startEvents: startMove
+  "
+
+  animation__turn="
+    property: rotation;
+    to: ;
+    dur: 1000;
+    startEvents: move1done
+  "
+
+  animation__move2="
+    property: position;
+    to: ;
+    dur: 2000;
+    easing: linear;
+    startEvents: turndone
+  "
       ></a-entity>
                  
     </a-scene>
