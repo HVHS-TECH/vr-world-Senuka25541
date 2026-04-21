@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   truck.addEventListener('animationcomplete__fifth', () => {
-    truck.setAttribute('position', '3.295 1.384 -1.236');
+    truck.setAttribute('position', '3.295 0.163 -1.236');
     truck.setAttribute('rotation', '-90 270 90');
 
     truck.emit('resetStart');
@@ -132,41 +132,41 @@ window.addEventListener('DOMContentLoaded', () => {
     <body>
     <a-scene>
       <a-sky color="lightblue"></a-sky>
-      
+      <a-box color="green" position="0 0 -4"></a-box> 
 
       <a-entity 
       ply-model="src:City model-0.ply"
-      position="-4.8 0.8 -5"
+      position="-4.8 -0.435 -5"
       rotation="-90 90 90"
       ></a-entity>
 
       <a-entity 
       ply-model="src:City model-1.ply"
-      position="-4.8 0.8 -5"
+      position="-4.8 -0.435 -5"
       rotation="-90 90 90"
       ></a-entity>
 
       <a-entity 
       ply-model="src:City model-2.ply"
-      position="-4.8 0.8 -5"
+      position="-4.8 -0.435 -5"
       rotation="-90 90 90"
       ></a-entity>
 
       <a-entity 
       ply-model="src:City model-3.ply"
-      position="-4.8 0.8 -5"
+      position="-4.8 -0.435 -5"
       rotation="-90 90 90"
       ></a-entity>
 
 <a-entity id="truck"
   ply-model="src:truck.ply"
-  position="3.295 1.384 -1.236"
+  position="3.295 0.163 -1.236"
   rotation="-90 270 90"
   scale="0.27 0.27 0.27"
 
   animation__first="
     property: position;
-    to: 3.295 1.384 -9.974;
+    to: 3.295 0.163 -9.974;
     dur: 3000;
     easing: linear;
     startEvents: resetStart
@@ -181,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
   "
     animation__second="
     property: position;
-    to: 13.041 1.384 -9.974 ;
+    to: 13.041 0.163 -9.974 ;
     dur: 3000;
     easing: linear;
     startEvents: moveNext
@@ -195,7 +195,7 @@ window.addEventListener('DOMContentLoaded', () => {
   "
     animation__third="
     property: position;
-    to: 13.041 1.384 -0.010 ;
+    to: 13.041 0.163 -0.010 ;
     dur: 3000;
     easing: linear;
     startEvents: moveNext2
@@ -209,7 +209,7 @@ window.addEventListener('DOMContentLoaded', () => {
   "   
     animation__fourth="
     property: position;
-    to: 3.324 1.384 -0.010 ;
+    to: 3.324 0.163 -0.010 ;
     dur: 3000;
     easing: linear;
     startEvents: moveNext3
@@ -223,7 +223,7 @@ window.addEventListener('DOMContentLoaded', () => {
   " 
     animation__fifth="
     property: position;
-    to: 3.295 1.384 -1.236;
+    to: 3.295 0.163 -1.236;
     dur: 800;
     easing: linear;
     startEvents: moveNext4
@@ -282,48 +282,48 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <a-entity 
       ply-model="src:City cars-0.ply"
-      position="3.532 1.398 -10.739"
+      position="3.532 0.163 -10.739"
       rotation="-90 180 90"
       scale="0.27 0.27 0.27"
 ></a-entity>
 
 <a-entity 
       ply-model="src:City cars-1.ply"
-      position="5.088 1.398 -15.907"
+      position="5.088 0.163 -15.907"
       rotation="-90 360 90"
       scale="0.27 0.27 0.27"
 ></a-entity>
 
 <a-entity 
       ply-model="src:City cars-2.ply"
-      position="3.629 1.398 -18.376"
+      position="3.629 0.163 -18.376"
       rotation="-90 180 90"
       scale="0.27 0.27 0.27"
 ></a-entity>
 
 <a-entity 
       ply-model="src:City cars-3.ply"
-      position="3.532 1.398 -10.916"
+      position="3.532 0.163 -10.916"
       rotation="-90 180 90"
       scale="0.27 0.27 0.27"
 ></a-entity>
 
 <a-entity id="redCarPark"
       ply-model="src:City cars-4.ply"
-      position="5.025 1.398 -15.969"
+      position="5.025 0.163 -15.969"
       rotation="-90 360 90"
       scale="0.27 0.27 0.27"
 ></a-entity>
 
 <a-entity id="redCar"
   ply-model="src:redCar.ply"
-  position="-0.647 1.353 -11.034"
+  position="-0.647 0.163 -11.034"
   rotation="-90 360 90"
   scale="0.27 0.27 0.27"
 
   animation__1="
     property: position;
-    to: -9.957 1.353 -11.034;
+    to: -9.957 0.163 -11.034;
     dur: 3000;
     easing: linear;
     startEvents: resetStart
@@ -337,7 +337,7 @@ window.addEventListener('DOMContentLoaded', () => {
   "
     animation__2="
     property: position;
-    to: -9.957 1.353 -22.317;
+    to: -9.957 0.163 -22.317;
     dur: 3000;
     easing: linear;
     startEvents: moveforward
@@ -351,7 +351,7 @@ window.addEventListener('DOMContentLoaded', () => {
   "
     animation__3="
     property: position;
-    to: 0.730 1.353 -22.317;
+    to: 0.730 0.163 -22.317;
     dur: 3000;
     easing: linear;
     startEvents: moveforward1"
@@ -365,7 +365,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     animation__4="
     property: position;
-    to: 0.730 1.353 -11.082;
+    to: 0.730 0.163 -11.082;
     dur: 3000;
     easing: linear;
     startEvents: moveforward2"
@@ -379,7 +379,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     animation__5="
     property: position;
-    to:-0.647 1.353 -11.034 
+    to:-0.647 0.163 -11.034 
     easing: linear;
     startEvents: moveforward3"
     
