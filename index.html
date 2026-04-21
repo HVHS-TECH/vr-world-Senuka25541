@@ -36,14 +36,17 @@ window.addEventListener('DOMContentLoaded', () => {
     truck.emit('moveDone4');
   });
 
-  truck.addEventListener('animationcomplete__turn4', () => {
+    truck.addEventListener('animationcomplete__turn4', () => {
+    truck.emit('moveNext4');
+  });
+
+  truck.addEventListener('animationcomplete__fifth', () => {
     truck.setAttribute('position', '3.295 1.384 -1.236');
     truck.setAttribute('rotation', '-90 270 90');
 
     truck.emit('resetStart');
   });
 
-  // start immediately
   truck.emit('resetStart');
 });
 </script>
@@ -140,7 +143,14 @@ window.addEventListener('DOMContentLoaded', () => {
     dur: 800;
     easing: linear;
     startEvents: moveDone4
-  "
+  " 
+    animation_fifth="
+    property: position;
+    to: 3.295 1.384 -1.236;
+    dur: 3000;
+    easing: linear;
+    startEvents: moveNext4
+  " 
   
   
   
