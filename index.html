@@ -68,6 +68,10 @@ window.addEventListener('DOMContentLoaded', () => {
     redCar.addEventListener('animationcomplete__2', () => {
     redCar.emit('moveturn2');
   });
+
+    redCar.addEventListener('animationcomplete__3', () => {
+    redCar.emit('moveforward1');
+  });
 });
 </script>
 
@@ -272,6 +276,12 @@ window.addEventListener('DOMContentLoaded', () => {
     easing: linear;
     startEvents: moveturn2
   "
+    animation__3="
+    property: position;
+    to: -6.74 1.353 -22.317;
+    dur: 3000;
+    easing: linear;
+    startEvents: moveforward1"
 ></a-entity>
 
 
