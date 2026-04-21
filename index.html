@@ -51,6 +51,59 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!DOCTYPE html>
+<html>
+  <head>
+
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const truck = document.querySelector('#truck');
+
+  truck.addEventListener('animationcomplete__first', () => {
+    truck.emit('moveDone');
+  });
+
+  truck.addEventListener('animationcomplete__turn', () => {
+    truck.emit('moveNext');
+  });
+
+  truck.addEventListener('animationcomplete__second', () => {
+    truck.emit('moveDone2');
+  });
+
+  truck.addEventListener('animationcomplete__turn2', () => {
+    truck.emit('moveNext2');
+  });
+
+  truck.addEventListener('animationcomplete__third', () => {
+    truck.emit('moveDone3');
+  });
+
+  truck.addEventListener('animationcomplete__turn3', () => {
+    truck.emit('moveNext3');
+  });
+
+  truck.addEventListener('animationcomplete__fourth', () => {
+    truck.emit('moveDone4');
+  });
+
+    truck.addEventListener('animationcomplete__turn4', () => {
+    truck.emit('moveNext4');
+  });
+
+  truck.addEventListener('animationcomplete__fifth', () => {
+    truck.setAttribute('position', '3.295 1.384 -1.236');
+    truck.setAttribute('rotation', '-90 270 90');
+
+    truck.emit('resetStart');
+  });
+
+  truck.emit('resetStart');
+});
+</script>
+
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const redCar = document.querySelector('#redCar');
@@ -251,6 +304,178 @@ window.addEventListener('DOMContentLoaded', () => {
     easing: linear;
     startEvents: moveNext4
   " 
+></a-entity>
+
+<a-entity
+  ply-model="src:smoke 5.ply"
+  position="-4.40 7.2 -20.530"
+  scale="0.1 0.1 0.1"
+  rotation="-90 0 0"
+
+  animation__pulse="
+    property: scale;
+    to: 0.3 0.45 0.45;
+    dir: alternate;
+    dur: 6000;
+    easing: easeInOutSine;
+    startEvents: startSmoke;
+  "
+></a-entity>  
+
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const smoke = document.querySelector('[ply-model*="smoke 5"]');
+
+  setTimeout(() => {
+    smoke.emit('startSmoke');
+  }, 2000);
+});
+</script>
+
+  </head>
+    <body>
+    <a-scene>
+      <a-sky color="lightblue"></a-sky>
+      
+       <!-- Put this inside the <a-scene> -->
+      <a-entity 
+      ply-model="src:City model-0.ply"
+      position="-4.8 0.8 -5"
+      rotation="-90 90 90"
+      ></a-entity>
+
+      <a-entity 
+      ply-model="src:City model-1.ply"
+      position="-4.8 0.8 -5"
+      rotation="-90 90 90"
+      ></a-entity>
+
+      <a-entity 
+      ply-model="src:City model-2.ply"
+      position="-4.8 0.8 -5"
+      rotation="-90 90 90"
+      ></a-entity>
+
+      <a-entity 
+      ply-model="src:City model-3.ply"
+      position="-4.8 0.8 -5"
+      rotation="-90 90 90"
+      ></a-entity>
+
+<a-entity id="truck"
+  ply-model="src:truck.ply"
+  position="3.295 1.384 -1.236"
+  rotation="-90 270 90"
+  scale="0.27 0.27 0.27"
+
+  animation__first="
+    property: position;
+    to: 3.295 1.384 -9.974;
+    dur: 3000;
+    easing: linear;
+    startEvents: resetStart
+  "
+
+  animation__turn="
+    property: rotation;
+    to: -90 180 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveDone
+  "
+    animation__second="
+    property: position;
+    to: 13.041 1.384 -9.974 ;
+    dur: 3000;
+    easing: linear;
+    startEvents: moveNext
+  "
+    animation__turn2="
+    property: rotation;
+    to: -90 90 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveDone2
+  "
+    animation__third="
+    property: position;
+    to: 13.041 1.384 -0.010 ;
+    dur: 3000;
+    easing: linear;
+    startEvents: moveNext2
+  " 
+    animation__turn3="
+    property: rotation;
+    to: -90 0 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveDone3
+  "   
+    animation__fourth="
+    property: position;
+    to: 3.324 1.384 -0.010 ;
+    dur: 3000;
+    easing: linear;
+    startEvents: moveNext3
+  " 
+    animation__turn4="
+    property: rotation;
+    to: -90 -90 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveDone4
+  " 
+    animation__fifth="
+    property: position;
+    to: 3.295 1.384 -1.236;
+    dur: 800;
+    easing: linear;
+    startEvents: moveNext4
+  " 
+></a-entity>
+
+<a-entity id="redCar"
+  ply-model="src:car 1.ply"
+  position="0.619 1.383 -8.946"
+  rotation="-90 360 90"
+  scale="0.27 0.27 0.27"
+
+  animation__first="
+  property: position;
+  to: -8.955 1.413 -8.956;
+  dur: 3000;
+  easing: linear;
+  startEvents: startCar
+"
+animation__turn="
+  property: rotation;
+  to: -90 90 90;
+  dur: 800;
+  easing: linear;
+  startEvents: turnCar
+"
+animation__second="
+  property: position;
+  to: 13.041 1.384 -9.974 ;
+  dur: 3000;
+  easing: linear;
+  startEvents: moveNext
+"
+animation__turn2="
+  property: rotation;
+  to: -90 90 90;
+  dur: 800;
+  easing: linear;
+  startEvents: turnCar2
+"
+animation__third="
+  property: position;
+  to: 13.041 1.384 -0.010 ;
+  dur: 3000;
+  easing: linear;
+  startEvents: moveNext2
+"
 ></a-entity>
 
 <a-entity
