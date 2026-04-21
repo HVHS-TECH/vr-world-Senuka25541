@@ -12,8 +12,12 @@ window.addEventListener('DOMContentLoaded', () => {
     truck.emit('moveDone');
   });
 
-  truck.addEventListener('animationcomplete__turn', () => {
+  truck.addEventListener('animationcomplete__turn1', () => {
     truck.emit('moveNext');
+  });
+
+  truck.addEventListener('animationcomplete__second', () => {
+    truck.emit('moveDone2');
   });
 });
 </script>
@@ -57,7 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
   animation__first="
     property: position;
     to: 3.295 1.384 -9.974;
-    dur: 30000;
+    dur: 3000;
     easing: linear;
     startEvents: loaded
   "
@@ -72,16 +76,16 @@ window.addEventListener('DOMContentLoaded', () => {
     animation__second="
     property: position;
     to: 13.041 1.384 -9.974 ;
-    dur: 20000;
+    dur: 3000;
     easing: linear;
     startEvents: moveNext
   "
-    animation__turn="
+    animation__turn2="
     property: rotation;
     to: -90 90 90;
     dur: 800;
     easing: linear;
-    startEvents: moveDone
+    startEvents: moveDone2
   "
   
 
