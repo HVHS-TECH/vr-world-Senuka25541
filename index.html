@@ -55,10 +55,12 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', () => {
   const redCar = document.querySelector('#redCar');
 
+  redCar.emit('resetStart');
+
   redCar.addEventListener('animationcomplete__1', () => {
     redCar.emit('move1');
   });
-  });
+});
 </script>
 
 
