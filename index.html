@@ -60,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
   redCar.addEventListener('animationcomplete__1', () => {
     redCar.emit('move1');
   });
+
 });
 </script>
 
@@ -223,7 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scale="0.27 0.27 0.27"
 ></a-entity>
 
-<a-entity id="redCar"
+<a-entity id="redCarPark"
       ply-model="src:City cars-4.ply"
       position="5.025 1.398 -15.969"
       rotation="-90 360 90"
@@ -242,6 +243,13 @@ window.addEventListener('DOMContentLoaded', () => {
     dur: 3000;
     easing: linear;
     startEvents: resetStart
+  "
+    animation__turn="
+    property: rotation;
+    to: -90 270 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveturn
   "
 ></a-entity>
 
