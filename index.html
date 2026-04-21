@@ -72,6 +72,10 @@ window.addEventListener('DOMContentLoaded', () => {
   redCar.addEventListener('animationcomplete__turn2', () => {
     redCar.emit('moveforward1');
   });
+
+    redCar.addEventListener('animationcomplete__3', () => {
+    redCar.emit('moveturn3');
+  });
 });
 </script>
 
