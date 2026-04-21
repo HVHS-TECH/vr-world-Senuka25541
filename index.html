@@ -19,6 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
   truck.addEventListener('animationcomplete__second', () => {
     truck.emit('moveDone2');
   });
+
+  truck.addEventListener('animationcomplete__turn2', () => {
+    truck.emit('moveNext2');
+  });
 });
 </script>
     
