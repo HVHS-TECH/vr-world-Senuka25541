@@ -55,10 +55,21 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', () => {
   const redCar = document.querySelector('#redCar');
 
-  redCar.addEventListener('animationcomplete__1', () => {
-    redCar.emit('move1');
+  // start after page loads
+  setTimeout(() => {
+    redCar.emit('startCar');
+  }, 1500);
+
+  // when first move finishes → turn
+  redCar.addEventListener('animationcomplete__move1', () => {
+    redCar.emit('move1done');
   });
+
+  // when turn finishes → move again
+  redCar.addEventListener('animationcomplete__turn1', () => {
+    redCar.emit('move2');
   });
+});
 </script>
 
 
@@ -228,18 +239,34 @@ window.addEventListener('DOMContentLoaded', () => {
       scale="0.27 0.27 0.27"
 ></a-entity>
 
-<a-entity 
-      ply-model="src:redCar.ply"
-      position="-0.647 1.353 -11.034"
-      rotation="-90 360 90"
-      scale="0.27 0.27 0.27"
+<a-entity id="redCar"
+  ply-model="src:City cars-4.ply"
+  position="-0.647 1.353 -11.034"
+  rotation="-90 360 90"
+  scale="0.27 0.27 0.27"
 
-        animation__1="
+  animation__move1="
     property: position;
-    to:  -9.957 1.353 -11.034;
-    dur: 3000;
+    to: -9.957 1.353 -11.034;
+    dur: 8000;
     easing: linear;
-    startEvents: resetStart
+    startEvents: startCar
+  "
+
+  animation__turn1="
+    property: rotation;
+    to: -90 180 90;
+    dur: 800;
+    easing: linear;
+    startEvents: move1done
+  "
+
+  animation__move2="
+    property: position;
+    to: -5 1.398 -5;
+    dur: 8000;
+    easing: linear;
+    startEvents: move2
   "
 ></a-entity>
 
