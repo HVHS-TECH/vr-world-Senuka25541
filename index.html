@@ -51,6 +51,16 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const redCar = document.querySelector('#redCar');
+
+  redCar.addEventListener('animationcomplete__1', () => {
+    redCar.emit('move1');
+  });
+  });
+</script>
+
 
 
 <script>
@@ -224,7 +234,7 @@ window.addEventListener('DOMContentLoaded', () => {
       rotation="-90 180 90"
       scale="0.27 0.27 0.27"
 
-        animation__first="
+        animation__1="
     property: position;
     to:  -9.957 1.353 -11.034;
     dur: 3000;
