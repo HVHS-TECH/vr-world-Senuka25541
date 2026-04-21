@@ -37,20 +37,16 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   truck.addEventListener('animationcomplete__turn4', () => {
+    truck.setAttribute('position', '3.295 1.384 -1.236');
+    truck.setAttribute('rotation', '-90 270 90');
 
-    setTimeout(() => {
-      truck.setAttribute('position', '3.295 1.384 -1.236');
-      truck.setAttribute('rotation', '-90 270 90');
-
-      truck.emit('resetStart');
-    }, 500);
-
+    truck.emit('resetStart');
   });
 
+  // start immediately
   truck.emit('resetStart');
 });
 </script>
-
     
   </head>
     <body>
