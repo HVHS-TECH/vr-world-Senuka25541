@@ -49,9 +49,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   truck.emit('resetStart');
 });
-
-
 </script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const redCar = document.querySelector('#red-car');
+
+  setTimeout(() => {
+    redCar.emit('startCar');
+  }, 1000);
+});
+</script> 
+
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const smoke = document.querySelector('[ply-model*="smoke 5"]');
@@ -164,7 +173,7 @@ window.addEventListener('DOMContentLoaded', () => {
   " 
 ></a-entity>
 
-<a-entity id="red car"
+<a-entity id="red-car"
   ply-model="src:car 1.ply"
   position="0.619 1.383 -8.946"
   rotation="-90 360 90"
@@ -175,7 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
     to: -8.955 1.413 -8.956;
     dur: 30000;
     easing: linear;
-    startEvents: resetStart
+    startEvents: startCar
   "
 
   animation__turn="
