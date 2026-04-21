@@ -154,8 +154,10 @@ window.addEventListener('DOMContentLoaded', () => {
   " 
 ></a-entity>
 
-<a-entity id="factorySmoke" position="-4.4 7.2 -20.53" scale="0.3 0.3 0.3">
 
+<a-entity id="factorySmoke" scale="0.3 0.3 0.3" position="-4.40 7.2 -20.530" rotation="-90 0 0">
+
+  <!-- Smoke frames -->
   <a-entity ply-model="src:smoke 1.ply" position="0 0 0"
     animation__rise="property: position; to: 0 3 0; dur: 4000; loop: true; easing: linear"
     animation__grow="property: scale; to: 0.8 0.8 0.8; dur: 4000; loop: true; easing: linear">
