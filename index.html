@@ -35,8 +35,19 @@ window.addEventListener('DOMContentLoaded', () => {
   truck.addEventListener('animationcomplete__fourth', () => {
     truck.emit('moveDone4');
   });
+
+  truck.addEventListener('animationcomplete__turn4', () => {
+    // 🔥 LOOP BACK TO START
+    setTimeout(() => {
+      truck.setAttribute('position', '3.295 1.384 -1.236');
+      truck.setAttribute('rotation', '-90 270 90');
+
+      truck.emit('resetStart');
+    }, 500);
+  });
 });
 </script>
+
     
   </head>
     <body>
@@ -79,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
     to: 3.295 1.384 -9.974;
     dur: 3000;
     easing: linear;
-    startEvents: loaded
+    startEvents: resetStart
   "
 
   animation__turn="
