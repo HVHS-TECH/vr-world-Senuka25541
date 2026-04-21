@@ -51,58 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script>
-window.addEventListener('DOMContentLoaded', () => {
 
-  const frames = [
-    document.querySelector('#smoke1'),
-    document.querySelector('#smoke2'),
-    document.querySelector('#smoke3'),
-    document.querySelector('#smoke4')
-  ];
-
-  let i = 0;
-
-  setInterval(() => {
-
-    frames.forEach(f => {
-      f.setAttribute('visible', false);
-
-    
-      f.removeAttribute('animation__rise');
-      f.removeAttribute('animation__grow');
-    });
-
-    const current = frames[i];
-
-    current.setAttribute('visible', true);
-    current.setAttribute('position', '0 0 0');
-    current.setAttribute('scale', '0.5 0.5 0.5');
-
-   
-    current.setAttribute('animation__rise', {
-      property: 'position',
-      to: '0 3 0',
-      dur: 2000,
-      easing: 'linear'
-    });
-
-    current.setAttribute('animation__grow', {
-      property: 'scale',
-      to: '2 2 2',
-      dur: 2000,
-      easing: 'linear'
-    });
-
-    i = (i + 1) % frames.length;
-
-  }, 400);
-
-});
-</script>
-
-
-    
   </head>
     <body>
     <a-scene>
@@ -205,14 +154,7 @@ window.addEventListener('DOMContentLoaded', () => {
   " 
 ></a-entity>
 
-<a-entity id="factorySmoke" scale="0.3 0.3 0.3" position="-4.40 7.2 -20.530" rotation="-90 0 0">
 
-  <a-entity id="smoke1" ply-model="src:smoke 1.ply" visible="true"></a-entity>
-  <a-entity id="smoke2" ply-model="src:smoke 2.ply" visible="false"></a-entity>
-  <a-entity id="smoke3" ply-model="src:smoke 3.ply" visible="false"></a-entity>
-  <a-entity id="smoke4" ply-model="src:smoke 4.ply" visible="false"></a-entity>
-
-</a-entity>
                  
     </a-scene>
   </body>
