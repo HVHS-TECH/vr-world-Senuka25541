@@ -89,6 +89,10 @@ window.addEventListener('DOMContentLoaded', () => {
     redCar.emit('moveforward3');
   });
 
+  redCar.addEventListener('animationcomplete__5', () => {
+  redCar.setAttribute('rotation', '-90 360 90');
+  redCar.emit('resetStart');
+});
 });
 </script>
 
