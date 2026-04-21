@@ -53,17 +53,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const car = document.querySelector('#red-car');
+  const redCar = document.querySelector('#redCar');
 
-  // start moving
-  setTimeout(() => {
-    car.emit('startCar');
-  }, 1000);
 
-  // turn when halfway (simple timer fix)
-  setTimeout(() => {
-    car.emit('turnCar');
-  }, 15000);
+  redCar.addEventListener('animationcomplete__first', () => {
+    redCar.emit('turnCar');
+  });;
+
+    redCar.addEventListener('animationcomplete__first', () => {
+    redCar.emit('move2');
+  });;
+
+
+
 });
 </script> 
 
@@ -73,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     smoke.emit('startSmoke');
-  }, 2000); // 2 second delay
+  }, 2000);
 });
 </script>
 
@@ -179,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
   " 
 ></a-entity>
 
-<a-entity id="red-car"
+<a-entity id="redCar"
   ply-model="src:car 1.ply"
   position="0.619 1.383 -8.946"
   rotation="-90 360 90"
@@ -195,7 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   animation__turn="
     property: rotation;
-    to: -90 270 90;
+    to: -90 90 90;
     dur: 800;
     easing: linear;
     startEvents: turnCar
@@ -212,7 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
     to: -90 90 90;
     dur: 800;
     easing: linear;
-    startEvents: moveDone2
+    startEvents: move2
   "
     animation__third="
     property: position;
