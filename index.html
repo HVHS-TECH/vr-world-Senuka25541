@@ -6,13 +6,12 @@
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const car = document.querySelector('a-entity[ply-model]');
+  const car = document.querySelector('#truck');
 
   car.addEventListener('animationcomplete__first', () => {
     car.emit('moveDone');
   });
 });
-</script>
 </script>
     
   </head>
@@ -45,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
       rotation="-90 90 90"
       ></a-entity>
 
-      <a-entity 
+<a-entity id="truck"
   ply-model="src:truck.ply"
   position="3.768 1.384 -1.236"
   rotation="-90 270 90"
@@ -54,9 +53,9 @@ window.addEventListener('DOMContentLoaded', () => {
   animation__first="
     property: position;
     to: 3.768 1.384 -10.595;
-    dur: 20000;
+    dur: 30000;
     easing: linear;
-    startEvents: model-loaded
+    startEvents: loaded
   "
 
   animation__turn="
