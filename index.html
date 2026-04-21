@@ -43,12 +43,15 @@
         animation__first="
     property: position;
     to:3.768 1.384 -10.595;
-    dur: 200000;
+    dur: 20000;
     easing: linear;
-    startEvents: model-loaded
-
-  
-  "
+    startEvents: model-loaded"
+      animation__turn="
+    property: rotation;
+    to: -90 180 90;
+    dur: 800;
+    easing: linear;
+    startEvents: moveDone"
       ></a-entity>
                  
     </a-scene>
