@@ -53,11 +53,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const redCar = document.querySelector('#red-car');
+  const car = document.querySelector('#red-car');
 
+  // start moving
   setTimeout(() => {
-    redCar.emit('startCar');
+    car.emit('startCar');
   }, 1000);
+
+  // turn when halfway (simple timer fix)
+  setTimeout(() => {
+    car.emit('turnCar');
+  }, 15000);
 });
 </script> 
 
@@ -182,7 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {
   animation__first="
     property: position;
     to: -8.955 1.413 -8.956;
-    dur: 30000;
+    dur: 3000;
     easing: linear;
     startEvents: startCar
   "
@@ -192,7 +198,7 @@ window.addEventListener('DOMContentLoaded', () => {
     to: -90 270 90;
     dur: 800;
     easing: linear;
-    startEvents: moveDone
+    startEvents: turnCar
   "
     animation__second="
     property: position;
