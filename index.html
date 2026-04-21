@@ -41,25 +41,29 @@
       position="-4.8 0.8 -5"
       rotation="-90 90 90"
       ></a-entity>
-
+      
       <a-entity 
-      ply-model="src:truck.ply"
-      position="3.768 1.384 -1.236"
-      rotation="-90 270 90"
-      scale="0.27 0.27 0.27"
-        animation__first="
+  ply-model="src:truck.ply"
+  position="3.768 1.384 -1.236"
+  rotation="-90 270 90"
+  scale="0.27 0.27 0.27"
+
+  animation__first="
     property: position;
-    to:3.768 1.384 -10.595;
+    to: 3.768 1.384 -10.595;
     dur: 20000;
     easing: linear;
-    startEvents: model-loaded"
-      animation__turn="
+    startEvents: model-loaded
+  "
+
+  animation__turn="
     property: rotation;
     to: -90 180 90;
     dur: 800;
     easing: linear;
-    startEvents: moveDone"
-      ></a-entity>
+    startEvents: moveDone
+  "
+></a-entity>
                  
     </a-scene>
   </body>
