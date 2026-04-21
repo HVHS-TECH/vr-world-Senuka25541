@@ -159,13 +159,22 @@ window.addEventListener('DOMContentLoaded', () => {
   position="-4.40 7.2 -20.530"
   scale="0.1 0.3 0.3"
   rotation="-90 0 0"
+  material="transparent: true; opacity: 0.9"
 
-  animation__pulse="
+  animation__grow="
     property: scale;
-    to: 0.3 0.45 0.45;
-    dir: alternate;
-    dur: 6000;
-    easing: easeInOutSine;
+    to: 0.35 0.6 0.6;
+    dur: 3000;
+    easing: easeOutQuad;
+    loop: true;
+  "
+
+  animation__fade="
+    property: material.opacity;
+    to: 0;
+    dur: 3000;
+    easing: linear;
+    loop: true;
   "
 ></a-entity>
                  
