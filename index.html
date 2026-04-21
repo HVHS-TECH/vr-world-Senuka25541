@@ -61,15 +61,15 @@ window.addEventListener('DOMContentLoaded', () => {
     redCar.emit('moveturn');
   });
 
-    redCar.addEventListener('animationcomplete__turn', () => {
+  redCar.addEventListener('animationcomplete__turn', () => {
     redCar.emit('moveforward');
   });
 
-    redCar.addEventListener('animationcomplete__2', () => {
+  redCar.addEventListener('animationcomplete__2', () => {
     redCar.emit('moveturn2');
   });
 
-    redCar.addEventListener('animationcomplete__3', () => {
+  redCar.addEventListener('animationcomplete__turn2', () => {
     redCar.emit('moveforward1');
   });
 });
