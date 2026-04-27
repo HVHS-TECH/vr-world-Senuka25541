@@ -127,12 +127,13 @@ window.addEventListener('DOMContentLoaded', () => {
       scale="1 1 1"
       ></a-entity>
 
-      <a-entity 
-      ply-model="src:could.ply"
-      position="30 30 -5"
-      rotation="-90 90 90"
-      scale="1 1 1"
-      ></a-entity>
+ <a-entity 
+  ply-model="src:could.ply"
+  position="30 30 -5"
+  rotation="-90 90 90"
+  scale="1 1 1"
+  animation="property: position; to: 20 30 -5; dir: alternate; dur: 12000; easing: easeInOutSine; loop: true;"
+></a-entity>
 
             <a-entity 
       ply-model="src:could.ply"
