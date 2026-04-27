@@ -113,11 +113,11 @@ window.addEventListener('DOMContentLoaded', () => {
     <a-scene>
       <a-sky color="#87CEEB"></a-sky>
 
-      <a-entity 
+<a-entity 
   camera 
   position="0 1.6 -0.5"
   wasd-controls="acceleration: 8"
-  look-controls>
+  look-controls="pointerLockEnabled: true; touchEnabled: true; magicWindowTrackingEnabled: false; mouseSensitivity: 2">
 </a-entity>
 
 <a-entity 
