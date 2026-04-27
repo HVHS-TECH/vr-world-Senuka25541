@@ -96,34 +96,14 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-
-
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const smoke = document.querySelector('[ply-model*="smoke 5"]');
+  const smokes = document.querySelectorAll('[ply-model*="smoke"]');
 
   setTimeout(() => {
-    smoke.emit('startSmoke');
-  }, 2000);
-});
-</script>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const smoke = document.querySelector('[ply-model*="smoke 5 copy"]');
-
-  setTimeout(() => {
-    smoke.emit('startSmoke');
-  }, 2000);
-});
-</script>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const smoke = document.querySelector('[ply-model*="smoke 5 copy 2"]');
-
-  setTimeout(() => {
-    smoke.emit('startSmoke');
+    smokes.forEach(smoke => {
+      smoke.emit('startSmoke');
+    });
   }, 2000);
 });
 </script>
@@ -246,7 +226,7 @@ window.addEventListener('DOMContentLoaded', () => {
     property: scale;
     to: 0.28 0.42 0.42;
     dir: alternate;
-    dur: 7000;
+    dur: 8w000;
     easing: easeInOutSine;
     loop: true;
     startEvents: startSmoke;
@@ -280,7 +260,7 @@ window.addEventListener('DOMContentLoaded', () => {
     property: scale;
     to: 0.26 0.38 0.38;
     dir: alternate;
-    dur: 6500;
+    dur: 8000;
     easing: easeInOutSine;
     loop: true;
     startEvents: startSmoke;
